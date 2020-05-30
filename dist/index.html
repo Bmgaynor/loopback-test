@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" ng-app="RDash">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>DrinkSafe</title>
+  <!-- STYLES -->
+  <link rel="stylesheet" href="lib/css/main.min.css"/>
+  <!-- SCRIPTS -->
+  <script src="lib/js/main.min.js"></script>
+  <!-- Custom Scripts -->
+  <link rel="stylesheet" type="text/css" href="css/maincss.css">
+  <script type="text/javascript" src="js/dashboard.min.js"></script>
+</head>
+<body ng-controller="MasterCtrl">
+
+<div ng-hide="{{drink.photo}}"></div>
+
+  <!-- Facebook comments -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=180223248983804";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <!-- End Facebook comments -->
+  <div id="page-wrapper"  ng-class="{'open': toggle, 'navMobile': isMobile}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="mobileSidebar" ng-show="isMobile">
+      <a class="btn mobile-btn " ng-click="mobileToggle=!mobileToggle">
+        <span class="fa" ng-class="{'fa-bars': !mobileToggle, 'fa-times':mobileToggle}"></span>
+      </a>
+        <ul class="sidebar" ng-show="mobileToggle">
+          <li class="sidebar-list">
+            <a href="#">
+              Home <span class="menu-icon fa fa-home"></span></a>
+          </li>
+          <li class="sidebar-list">
+            <a href="#/drinkSearch">
+              Search Drinks<span class="menu-icon fa fa-search"></span></a>
+          </li>
+          <li ng-hide="hideUserMenu" class="ng-hide sidebar-list">
+            <a href="#/drinkCreation">
+              Create a Drink <span class="menu-icon fa fa-pencil"></span></a>
+          </li>
+          <!-- Start User Menu -->
+          <div ng-hide="hideUserMenu" class="ng-hide" id="userSideMenu">
+            <li class="sidebar-list">
+              <a href="#/userFavorites">
+                My Drinks <span class="menu-icon fa fa-heart"></span></a>
+            </li>
+            <li class="sidebar-list">
+              <a href="#/userCabinet">
+                My Liquor Cabinet<span class="menu-icon fa fa-beer"></span></a>
+            </li>
+            <div>
+        </ul>
+    </div>
+
+    <div id="sidebar-wrapper" ng-hide="isMobile">
+      <ul class="sidebar" >
+        <li class="sidebar-main">
+          <a ng-click="toggleSidebar()">
+            <img src="/img/drinksafe.svg" style="display: inline-block;width: 150px;"/>
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list">
+          <a href="#">
+            Home <span class="menu-icon fa fa-home"></span></a>
+        </li>
+        <!--<li class="sidebar-list">
+          <a href="#/absolutSearch">Absolut Search<span class="menu-icon fa fa-pencil"></span></a>
+        </li>-->
+        <li class="sidebar-list">
+          <a href="#/drinkSearch">
+            Search Drinks<span class="menu-icon fa fa-search"></span></a>
+        </li>
+        <li ng-hide="hideUserMenu" class="ng-hide sidebar-list">
+          <a href="#/drinkCreation">
+            Create a Drink <span class="menu-icon fa fa-pencil"></span></a>
+        </li>
+        <!-- Start User Menu -->
+        <div ng-hide="hideUserMenu" class="ng-hide" id="userSideMenu">
+          <li class="sidebar-title"><span>{{userFirstName}}'s Menu</span></li>
+          <li class="sidebar-list">
+            <a href="#/userFavorites">
+              My Drinks <span class="menu-icon fa fa-heart"></span></a>
+          </li>
+          <li class="sidebar-list">
+            <a href="#/userCabinet">
+              My Liquor Cabinet<span class="menu-icon fa fa-beer"></span></a>
+          </li>
+        <div>
+        <!-- End User Menu -->
+      </ul>
+      <div class="sidebar-footer">
+        <!--<div class="col-xs-4">
+          <a href="https://github.com/rdash/rdash-angular" target="_blank">
+            Github
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://github.com/rdash/rdash-angular/README.md" target="_blank">
+            About
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="#">
+            Support
+          </a>
+        </div>-->
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+      <div class="page-content">
+
+        <!-- Header Bar -->
+        <div class="row header">
+          <div class="row col-xs-12">
+            <div class="user pull-right">
+              <div class="item dropdown col-xs-4">
+                <a href="#" class="dropdown-toggle">
+                  <user-image></user-image>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <user-menu></user-menu>
+                </ul>
+              </div>
+              <div class="item dropdown col-xs-4">
+               <a href="#" class="dropdown-toggle">
+                 <notification></notification>
+               </a>
+               <ul class="dropdown-menu dropdown-menu-right">
+                 <notification-menu></notification-menu>
+               </ul>
+              </div>
+            </div>
+            <drink-bar></drink-bar>
+          </div>
+
+        </div>
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <div ui-view></div>
+
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+</body>
+</html>

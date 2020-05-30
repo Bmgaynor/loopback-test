@@ -1,0 +1,101 @@
+<div class="drinkDisplay">
+<div ng-hide="true">
+  <img ng-src="{{dataDrink.photo}}"></img> </div>
+
+  <div class="row top">
+    <div class="col-sm-4 col-md-4 col-lg-4 ">
+      <img alt="Image not found" class="col-sm-12 col-md-12 col-lg-12 " class="img-responsive" onError="this.onerror=null;this.src='img/red-solo-cup.jpg';" src="{{dataDrink.photo}}" style="max-width:100%"><br><br>
+
+    </div>
+
+    <div class="container-fluid col-sm-8 col-md-8 col-lg-8 row">
+      <div class="col-sm-12 col-md-12 col-lg-12 ">
+        <i class="col-lg-offset-11" ng-class="{false:'fa fa-heart-o fa-2x', true:'fa fa-heart fa-2x'}[favorited]" ng-click="favorite()" ng-hide="hideHeart"></i>
+        <h1 class="textName" id="dsName">{{dataDrink.name}}</h1>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h4 class="textDes">{{dataDrink.description}}</h4>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom textDes">
+
+
+
+    <div class="panel panel-primary col-xs-12 ingredients row "></br>
+    <div class="panel-heading col-xs-12 col-sm-12 col-lg-12 col-md-12">
+      <label class="col-xs-3 padFix" for="dcIngredients">Ingredients:</label>
+      <label class="col-xs-3 padFix" for="dcIngredients">Type:</label>
+      <label class="col-xs-3 padFix" for="dcIngredients">Amount:</label>
+      <label ng-show="currentUser" class="col-xs-3 padFix" for="dcIngredients">You Have:</label>
+    </div>
+  </br>
+  <ul class="row panel-body list-group textResize" id="dcIngredents">
+    </br>
+    <li class="row list-group-item col-xs-12 col-sm-12 col-md-12 col-lg-12 lineLeft" ng-repeat="ing in dataIngredient" style="list-style-type: none;">
+      <span class="col-xs-3 inWords padFix" style="word-wrap: break-word">
+        {{ing.text}}
+      </span>
+      <span class="col-xs-3 inWords padFix" style="word-wrap: break-word">
+        {{ing.type}}
+      </span>
+      <span class="col-xs-3 inWords padFix" style="word-wrap: break-word">
+        {{ing.amount.amount}}{{ing.amount.unit}}
+      </span>
+      <span ng-show="currentUser"
+            ng-class="{'text-warning' : ing.amount.amountUserHas < ing.amount.amount , 'text-error': ing.amount.amountUserHas === '--' }"
+            class="col-xs-3 inWords padFix" style="word-wrap: break-word">
+        {{ing.amount.amountUserHas}}{{ing.amount.unit}}
+      </span>
+      <br>
+    </li>
+  </ul>
+
+</div>
+
+<div class="drinkMe" ng-hide="hideHeart">
+  <button style="font-size:2vw;" ng-disabled="!haveAllIng" ng-attr-class="{{ haveAllIng ? 'btn-default btn ' : 'btn-warning btn ' }}" ng-click="drinkIt()"> Drink It! </button>
+</div>
+<p> {{status}} </p>
+
+<div class="steps">
+<label class="col-sm-12 col-md-12 col-lg-12" >Directions:</label><br>
+<ul class="list-group col-sm-12 col-md-12 col-lg-12 row ">
+  <li class="row list-group-item" ng-repeat="ins in dataDrink.instructions track by $index" style="list-style-type: none;">
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+      {{dataDrink.instructions.indexOf(ins)+1}}
+    </div>
+    <span class="col-xs-10 col-sm-11 col-md-11 col-lg-11" style="word-wrap: break-word">
+      {{ins}}
+    </span>
+    <br>
+  </li>
+</ul>
+</div>
+
+</div>
+<div  class="col-sm-12 col-md-12 col-lg-12" ng-class="{'entered':(enter && !hasRated && currentUser.id)||permColor }" ng-mouseenter="divEnter();enter=true" ng-mouseLeave="divLeave();enter=false" ng-disabled="hasRated">
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate===0, 'fa fa-star fa-2x':rate>=.75, 'fa fa-star-half-o fa-2x':rate>=.25 && rate<.75}" ng-mouseover="mouse(1)" ng-click="rateClick(1)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 1.25, 'fa fa-star fa-2x':rate>1.75, 'fa fa-star-half-o fa-2x':rate>1.25 && rate<=1.75}"  ng-mouseover="mouse(2)" ng-click="rateClick(2)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 2.25, 'fa fa-star fa-2x':rate>2.75, 'fa fa-star-half-o fa-2x':rate>2.25 && rate<=2.75}"  ng-mouseover="mouse(3)" ng-click="rateClick(3)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 3.25, 'fa fa-star fa-2x':rate>3.75, 'fa fa-star-half-o fa-2x':rate>3.25 && rate<=3.75}"  ng-mouseover="mouse(4)" ng-click="rateClick(4)" ng-disabled="hasRated"></i>
+    <i class="" ng-class="{'fa fa-star-o fa-2x': rate <= 4.25, 'fa fa-star fa-2x':rate>4.75, 'fa fa-star-half-o fa-2x':rate>4.25 && rate<=4.75}"  ng-mouseover="mouse(5)" ng-click="rateClick(5)" ng-disabled="hasRated"></i>
+</div>
+</br>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 social">
+  <a  analytics-category="Social Media" analytics-event="Footer" analytics-label="Twitter" analytics-on="" class="icon-twitter" href="https://twitter.com/sonicdrivein" target="_blank">
+                </a>
+<!-- Still showing up as hyper link...
+
+  <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="DrinkSafeuwm" data-size="large">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+-->
+    <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</br>
+</div>
+
+</div>
+
+</div>

@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "./node_modules/loopback-component-passport/lib/models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "user": {
+    "dataSource": "drinksDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "accessToken": {
+    "dataSource": "drinksDB",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "drinksDB",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "drinksDB",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "drinksDB",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "drinksDB",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "drinksDB",
+    "public": false
+  },
+  "drink": {
+    "dataSource": "drinksDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ingredient": {
+    "dataSource": "drinksDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "amount": {
+    "dataSource": "drinksDB",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "comment": {
+    "dataSource": "drinksDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CloudinaryImage": {
+    "dataSource": "cloudinary",
+    "public": true
+  }
+}

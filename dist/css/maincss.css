@@ -1,0 +1,351 @@
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
+.angucomplete-dropdown {
+    overflow-y: auto;
+    max-height: 200px; // your preference
+}
+#drinkBar .form-control{
+  width: 60%;
+  margin-top: 10px;
+}
+.angucomplete-description {
+    font-size: 12px;
+}
+.angucomplete-dropdown {
+    width: 60%;
+}
+.angucomplete-holder {
+  position: inherit;
+}
+
+
+.drinkCreation .ingList *{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.drinkCreation .ingDirections{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+.drinkDisplay .textName{
+  max-height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 2vw;
+  border-bottom: solid #428bca;
+  border-width: 1px;
+  cursor:pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+ .drinkDisplay .textDes{
+   max-height: 100%;
+   overflow: hidden;
+   font-size: 1.5vw;
+   word-wrap: break-word;
+   -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   -o-transition: all 1s ease;
+   -ms-transition: all 1s ease;
+   transition: all 1s ease;
+ }
+
+.drinkDisplay .bottom{
+  margin-left:1vw;
+}
+
+.drinkDisplay .social{
+  max-width:100%;
+  overflow: hidden;
+}
+
+.drinkDisplay .padFix{
+  padding-right:1vw !important;
+  padding-left:1vw !important;
+}
+
+.drinkDisplay .inWords{
+  text-align:left;
+}
+
+.drinkDisplay .fa-star-half-o{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .fa-star{
+  color:rgb(214, 161, 2);
+}
+.drinkDisplay .entered .fa-star{
+  color:red;
+}
+
+.drinkSearch{
+  padding:10px;
+  display:block;
+}
+
+.drinkSearch .drinkList{
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.drinkSearch .drinkItem{
+
+}
+
+
+
+.fade.ng-enter {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.fade.ng-leave {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;transition:0.5s linear all;
+  opacity:1;
+}
+.fade.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+ .drinkSearch .ingAdd{
+   padding:0px !important;
+ }
+ .drinkSearch .bar{
+   padding:15px;
+ }
+
+.drinkSearch .listFix {
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+
+.drinkSearch .textFix *{
+  font-size:10px;
+}
+
+.drinkSearch .inventoryBtn{
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.drinkSearch .searchImg {
+  cursor:pointer;
+  -webkit-transition: width 1s, height 1s;
+  -moz-transition: width 1s, height 1s;
+  -o-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+.drinkSearch .searchText {
+  -webkit-transition: width 1s, height 1s;
+  -moz-transition: width 1s, height 1s;
+  -o-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+.drinkSearch .searchList{
+
+}
+.drinkSearch .searchListItem{
+
+}
+
+
+
+.drinkSearch .textName {
+  max-height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 2vw;
+  border-bottom: solid #428bca;
+  border-width: 1px;
+  cursor:pointer;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.drinkSearch .textDes {
+  max-height: 100%;
+  overflow: hidden;
+  font-size: 1.5vw;
+  word-wrap: break-word;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.drinkSearch .textExpand .textName {
+  font-size: 2.2vw;
+overflow: auto;
+}
+.drinkSearch .textExpand .textDes {
+  font-size: 1.6vw;
+  overflow: auto;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.drinkSearch .dispalyDrink {
+  opacity: 1;
+  min-height: 0vh;
+  max-height:100%;
+}
+.drinkSearch .dispalyDrink.ng-hide-add, .dispalyDrink.ng-hide-remove {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition: width 1s, height 1s, opacity 1s;
+  -moz-transition: width 1s, height 1s, opacity 1s;
+  -o-transition: width 1s, height 1s, opacity 1s;
+  transition: width 1s, height 1s, opacity 1s;
+}
+.drinkSearch .dispalyDrink.ng-hide {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transition: width 1s, height 1s, opacity 1s;
+  -moz-transition: width 1s, height 1s, opacity 1s;
+  -o-transition: width 1s, height 1s, opacity 1s;
+  transition: width 1s, height 1s, opacity 1s;
+  opacity: 0;
+  height: 0px;
+}
+
+.drinkSearch .ingSearch{
+  max-width:90%;
+  width:90%;
+  margin:auto;
+}
+
+.navMobile{
+  padding-left:0px !important;
+}
+
+#mobileSidebar{
+  position:fixed;
+  z-index:998;
+  display:block;
+  height:100%;
+}
+ .mobile-btn{
+   background-color: #30426a;
+   z-index:999;
+   color:white;
+   height:40px;
+   width:40px;
+   display:block;
+   position:relative;
+   left:2px;
+   top:2px;
+ }
+
+ .mobile-btn span{
+   color:#b2bfdc;
+   font-size:18px;
+   margin:auto;
+   text-align:center;
+   top:3px;
+   position:relative;
+ }
+
+ #mobileSidebar .sidebar{
+   position:relative;
+   top:4px;
+   background-color: #30426a;
+   opacity: 0.9;
+   border-width:1px;
+   border-color:black;
+   border-style: solid;
+   border-radius: 5px;
+   left:4px;
+ }
+
+ #mobileSidebar .sidebar .sidebar-list a{
+   border-width:1px;
+   border-color:black;
+   border-style: solid;
+   position:relative;
+
+ }
+
+.badge {
+    font-size: .65em;
+
+    display: block;
+    position: absolute;
+    top: 2em;
+    left: 2.5em;
+    width: 1.75em;
+    height: 1.75em;
+    line-height: 1.55em;
+    border-radius: 50%;
+    text-align: left;
+
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+}
+
+.dropdown-item {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+
+
+.userCabinet{
+
+}
+
+.userCabinet .padFix{
+  padding-left: 3px !important;
+  padding-right:3px !important;
+}
+
+
+
+.userCabinet .textFix{
+  font-size:10px;
+}
+
+.userCabinet .ingList *{
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
+
+
+
+

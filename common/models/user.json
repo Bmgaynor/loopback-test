@@ -1,0 +1,58 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "strict": true,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "favoriteDrinks": {
+        "type": [
+          "string"
+        ]
+      }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "accessToken",
+      "foreignKey": "userId"
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": "userId"
+    },
+    "credentials": {
+      "type": "hasMany",
+      "model": "userCredential",
+      "foreignKey": "userId"
+    },
+    "customDrinks": {
+      "type": "hasMany",
+      "model": "drink",
+      "foreignKey": "userId"
+    },
+    "amounts": {
+      "type": "embedsMany",
+      "model": "amount",
+      "property": "amounts",
+      "options": {
+        "validate": false,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "*"
+    }
+  ],
+  "methods": {}
+}

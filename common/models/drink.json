@@ -1,0 +1,86 @@
+{
+  "name": "drink",
+  "plural": "drinks",
+  "base": "PersistedModel",
+  "strict": true,
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      }
+    },
+    "rating": {
+      "type": "number"
+    },
+    "numRatings": {
+      "type": "number"
+    },
+    "commented": {
+      "type": [
+        "string"
+      ]
+    },
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "color": {
+      "type": "string"
+    },
+    "instructions": {
+      "type": [
+        "string"
+      ]
+    },
+    "photo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true,
+      "index": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ingredients": {
+      "type": "hasAndBelongsToMany",
+      "model": "ingredient",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
+    },
+    "amounts": {
+      "type": "embedsMany",
+      "model": "amount",
+      "property": "amounts",
+      "options": {
+        "validate": false,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "*"
+    }
+  ],
+  "methods": {}
+}
